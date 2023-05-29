@@ -1,209 +1,78 @@
-export interface IGameResp {
-  results: IGame[];
-}
-
-export interface IGame {
-  added: number;
-  price: number;
-  added_by_status: {
-    beaten: number;
-    dropped: number;
-    owned: number;
-    toplay: number;
-    yet: number;
-  };
-  background_image: string;
-  dominant_color: string;
-  esrb_rating: IESRB_RATING;
-  genres: IGenre[];
+export interface Movie {
+  poster_path: string | null;
+  adult: boolean;
+  overview: string;
+  release_date: string;
   id: number;
-  metacritic: number;
-  name: string;
-  parent_platforms: IParentPlatform[];
-  platforms: IPlatform[];
-  playtime: number;
-  rating: Float32Array;
-  rating_top: number;
-  ratings: IRating[];
-  ratings_count: number;
-  released: string;
-  reviews_count: number;
-  reviews_text_count: number;
-  saturated_color: string;
-  slug: string;
-  tba: boolean;
-  updated: string;
-  tags: ITag[];
-  stores: IStore[];
-}
-
-export interface IStore {
-  id: number;
-  store: {
-    domain: string;
-    games_count: number;
-    id: number;
-    image_background: string;
-    name: string;
-    slug: string;
-  };
-}
-
-export interface ITag {
-  games_count: number;
-  id: number;
-  name: string;
-  slug: string;
-  language: string;
-  image_background: string;
-}
-
-export interface IRating {
-  count: number;
-  id: number;
-  percent: Float32Array;
+  original_title: string;
+  original_language: string;
   title: string;
+  backdrop_path: string | null;
+  popularity: number;
+  video: boolean;
+  vote_count: number;
+  vote_average: number;
+  name?: string;
+  movie_id?: number;
+  first_air_date: string;
 }
 
-export interface IPlatform {
-  platform: {
-    games_count: number;
-    id: number;
-    image_background: string;
-    slug: string;
-    name: string;
-  };
-}
-
-export interface IParentPlatform {
-  platform: {
-    id: number;
-    name: string;
-    slug: string;
-  };
-}
-
-export interface IGenre {
-  games_count: number;
+export interface MovieDetails {
+  backdrop_path?: string;
+  genres: Genre[];
   id: number;
-  image_background: string;
-  name: string;
-  slug: string;
-}
-
-export interface IESRB_RATING {
-  id: number;
-  name: string;
-  slug: string;
-}
-
-export interface IGameDetails {
-  id: number;
-  slug: string;
-  name: string;
-  name_original: string;
-  description: string;
-  metacritic: number;
-  metacritic_platforms: MetacriticPlatform[];
-  released: Date;
-  tba: boolean;
-  updated: Date;
-  background_image: string;
-  background_image_additional: string;
-  website: string;
-  rating: number;
-  rating_top: number;
-  ratings: any;
-  reactions: any;
-  added: number;
-  added_by_status: any;
-  playtime: number;
-  screenshots_count: number;
-  movies_count: number;
-  creators_count: number;
-  achievements_count: number;
-  parent_achievements_count: string;
-  reddit_url: string;
-  reddit_name: string;
-  reddit_description: string;
-  reddit_logo: string;
-  reddit_count: number;
-  twitch_count: string;
-  youtube_count: string;
-  reviews_text_count: string;
-  ratings_count: number;
-  suggestions_count: number;
-  alternative_names: string[];
-  metacritic_url: string;
-  parents_count: number;
-  additions_count: number;
-  game_series_count: number;
-  esrb_rating: EsrbRating;
-  platforms: Platform[];
-}
-
-export interface Screenshot {
-  image: string;
-  hidden: boolean;
-}
-
-export interface GameScreenshots {
-  results: Screenshot[];
-}
-
-export interface EsrbRating {
-  id: number;
-  slug: string;
+  popularity: number;
+  release_date: string;
+  title: string;
+  status: string;
+  production_companies: Company[];
+  overview: string;
+  runtime?: number;
+  vote_average: number;
+  poster_path: string;
   name: string;
 }
 
-export interface MetacriticPlatform {
-  metascore: number;
-  url: string;
-}
-
-export interface Platform {
-  platform: EsrbRating;
-  released_at: string;
-  requirements: Requirements;
-}
-
-export interface Requirements {
-  minimum: string;
-  recommended: string;
-}
-
-export interface IGenre {
+interface Genre {
   id: number;
   name: string;
-  slug: string;
-  games_count: number;
-  image_background: string;
-  games: {
-    added: number;
-    id: number;
-    name: string;
-    slug: string;
-  }[];
 }
 
-export interface GenreResp {
-  results: IGenre[];
+interface Company {
+  id: number;
+  name: string;
+  logo_path?: string;
 }
 
-export interface PlatformResp {
-  results: IPlatformData[];
+export interface TVDetails extends MovieDetails {
+  name: string;
+  episode_run_time: number[];
+  first_air_date: string;
+  last_air_date: string;
+  networks: Network[];
+  number_of_episodes: number;
+  number_of_seasons: number;
+  seasons: Season[];
+  type: string;
 }
 
-export interface IPlatformData extends IGenre {
-  year_start?: number;
-  year_end?: number;
+interface Season {
+  id: number;
+  name: string;
+  poster_path: string;
+  season_number: number;
 }
 
-export interface IWishlist {
+interface Network {
+  id: number;
+  name: string;
+  logo_path: string;
+}
+
+export interface ISaved {
   id: string;
-  name: string;
-  price: number;
-  gameId: number;
-  image: string;
+  title: string;
+  vote_average: string;
+  movieId: number;
+  release_date: string;
 }

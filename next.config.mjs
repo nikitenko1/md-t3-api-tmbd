@@ -12,7 +12,7 @@ const config = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "media.rawg.io",
+        hostname: "image.tmdb.org",
       },
       {
         protocol: "https",
