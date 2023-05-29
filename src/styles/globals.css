@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@layer components {
+  .row {
+    @apply grid  min-w-0 auto-cols-max grid-flow-col  gap-4 overflow-y-hidden  overflow-x-scroll;
+  }
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid black;
+  }
+
+  .neon {
+    box-shadow: 0 4px 2px -2px #e3a2ff, 0 0 0.2rem #fff, 0 0 0.2rem #bc13fe,
+      0 0 0.2rem #bc13fe, 0 0 0.75rem #bc13fe, inset 0 0 0.5rem #bc13fe;
+  }
+
+  .inset-shadow {
+    box-shadow: 0px -14px 33px -7px rgba(0, 0, 0, 0.31) inset;
+    -webkit-box-shadow: 0px -14px 33px -7px rgba(0, 0, 0, 0.31) inset;
+    -moz-box-shadow: 0px -14px 33px -7px rgba(0, 0, 0, 0.31) inset;
+  }
+}
+
+.darker {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
