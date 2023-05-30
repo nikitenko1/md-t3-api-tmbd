@@ -26,15 +26,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
     <>
       <SessionProvider session={session}>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-        <Toaster
-          position="bottom-center"
-          toastOptions={{
-            style: {
-              background: "#1D9BF0",
-              color: "#fff",
-            },
-          }}
-        />
+        <Toaster position="top-center" reverseOrder={false} />
         <RecoilRoot>
           <AuthWrapper>
             <Layout>

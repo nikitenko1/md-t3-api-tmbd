@@ -2,7 +2,9 @@ import { useRecoilState } from "recoil";
 import { AnimatePresence, useScroll } from "framer-motion";
 import ProgressBar from "./ProgressBar";
 import { rightSidebar } from "../../atoms/rightSidebar";
+import Navbar from "./Navbar";
 import Right from "./Right";
+import Sidebar from "./Sidebar";
 
 interface IProps {
   children: React.ReactNode;
@@ -25,12 +27,14 @@ const Layout = ({ children }: IProps) => {
         onExitComplete={() => null}
       >
         <ProgressBar progress={scrollYProgress} />
-        <div className="bg-primary p-4">
+        <div className="bg-primary">
           <div className="px-2 pt-2"></div>
+          <Sidebar />
+          <Navbar />
           {children}
-          <div className={`hidden lg:block ${openSidebar ? "md:block" : ""}`}>
-            <Right />
-          </div>
+        </div>
+        <div className={`hidden lg:block ${openSidebar ? "md:block" : ""}`}>
+          <Right />
         </div>
       </AnimatePresence>
     </main>
