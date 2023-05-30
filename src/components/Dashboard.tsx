@@ -1,6 +1,5 @@
 import React from "react";
 import { Movie } from "../../interface";
-import { useSession } from "next-auth/react";
 import Body from "./Body";
 import Poster from "./Poster";
 import Search from "./Search";
@@ -18,8 +17,6 @@ const Dashboard = ({
   topRatedMovies,
   popularMovies,
 }: IMovie) => {
-  const { data: session } = useSession();
-
   return (
     <Body>
       <div>
