@@ -24,10 +24,7 @@ const Dashboard = ({
           <Search />
         </div>
         <h1 className="mb-2 text-2xl font-bold text-white">Trending movies</h1>
-        <div
-          className="row scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-none 
-        scrollbar-thumb-rounded-md rounded"
-        >
+        <div className="row scrollbar-thumb-gray-800 scrollbar-thin rounded">
           {trendingMovies?.map((movie) => (
             <Poster key={movie.id} movie={movie} size="big" type="movie" />
           ))}
@@ -35,10 +32,7 @@ const Dashboard = ({
       </div>
       <div>
         <h1 className="mb-2 text-2xl font-bold text-white">Now playing</h1>
-        <div
-          className="row scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-100 
-        scrollbar-thumb-rounded-md"
-        >
+        <div className="row scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-100">
           {nowPlayingMovies?.map((movie) => (
             <Poster key={movie.id} movie={movie} size="normal" type="movie" />
           ))}
@@ -46,10 +40,7 @@ const Dashboard = ({
       </div>
       <div>
         <h1 className="mb-2 text-2xl font-bold text-white">Top Rated</h1>
-        <div
-          className="row  scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-100 
-        scrollbar-thumb-rounded-md"
-        >
+        <div className="row  scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-100">
           {topRatedMovies?.map((movie) => (
             <Poster key={movie.id} movie={movie} size="normal" type="movie" />
           ))}
@@ -57,10 +48,7 @@ const Dashboard = ({
       </div>
       <div>
         <h1 className="mb-2 text-2xl font-bold text-white">Popular</h1>
-        <div
-          className="row  scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-100 
-        scrollbar-thumb-rounded-md"
-        >
+        <div className="row  scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-100">
           {popularMovies?.map((movie) => (
             <Poster key={movie.id} movie={movie} size="normal" type="movie" />
           ))}

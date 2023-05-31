@@ -14,7 +14,7 @@ interface IMovie {
 
 const Poster = ({ movie, size, type, internal }: IMovie) => {
   const router = useRouter();
-  console.log(movie);
+
   const {
     addedToBookmarks,
     handleDeleteBookmark,

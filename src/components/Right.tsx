@@ -24,7 +24,7 @@ const Right = () => {
 
   const router = useRouter();
   if (router.pathname === "/auth/signin") return null;
-
+  if (openSidebar) return null;
   return (
     <div className="fixed right-0 top-0 z-[999] min-h-screen space-y-4 bg-[#1A161F] p-4 text-gray-500">
       <div className="flex items-center gap-2">
@@ -39,7 +39,7 @@ const Right = () => {
             )}
           </Link>
         ) : (
-          <div className="flex items-center gap-2">
+          <>
             <Image
               src={session?.user?.image || `/noAvatar.png`}
               width={40}
@@ -52,7 +52,8 @@ const Right = () => {
 
               <p className="text-sm text-gray-400">session?.user?.email</p>
               <button
-                className="mt-3 cursor-pointer border-[#bc13fe] font-bold uppercase text-white hover:border-b-2"
+                className="mt-3 cursor-pointer border-[#bc13fe] font-bold uppercase text-white 
+                hover:border-b-2"
                 onClick={handleSignOut}
               >
                 {desktop ? (
@@ -62,7 +63,7 @@ const Right = () => {
                 )}
               </button>
             </div>
-          </div>
+          </>
         )}
       </div>
       <div

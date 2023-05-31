@@ -105,7 +105,7 @@ const Sidebar = () => {
           LIBRARY
         </p>
         <ul className="flex flex-col space-y-3 pl-[6px]">
-          <Link href="">
+          <Link href="/recent">
             <span
               className={`flex cursor-pointer items-center gap-1.5 ${
                 router.pathname === "/recent"

@@ -17,7 +17,7 @@ const Layout = ({ children }: IProps) => {
   const [openSidebar] = useRecoilState(rightSidebar);
 
   return (
-    <main className="scrollbar-thin overflow-x-hidden">
+    <main className="scrollbar-thin overflow-x-hidden bg-[#1A161F]">
       <AnimatePresence
         initial={false}
         // Only render one component at a time.
@@ -27,13 +27,11 @@ const Layout = ({ children }: IProps) => {
         onExitComplete={() => null}
       >
         <ProgressBar progress={scrollYProgress} />
-        <div className="bg-primary">
-          <div className="px-2 pt-2"></div>
-          <Sidebar />
-          <Navbar />
+
+        <Sidebar />
+        <Navbar />
+        <div className={`md:hidden" ${openSidebar ? "lg:block" : ""}`}>
           {children}
-        </div>
-        <div className={`hidden lg:block ${openSidebar ? "md:block" : ""}`}>
           <Right />
         </div>
       </AnimatePresence>
