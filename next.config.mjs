@@ -20,7 +20,7 @@ const config = {
       },
       {
         protocol: "https",
-        hostname: "res.cloudinary.com",
+        hostname: "image.tmdb.orgimage.tmdb.org",
       },
       // {
       //   protocol: "https",

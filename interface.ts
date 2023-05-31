@@ -76,3 +76,36 @@ export interface ISaved {
   movieId: number;
   release_date: string;
 }
+
+export interface Cast {
+  id: number;
+  name: string;
+  profile_path: string;
+  character: string;
+}
+
+export interface MovieReview {
+  id: string;
+  author_details: Author;
+  content: string;
+  created_at: string;
+  url: string;
+}
+
+interface Author {
+  name: string;
+  username: string;
+  avatar_path: string | null;
+  rating: number;
+}
+
+export interface SeasonDetails extends Season {
+  overview: string;
+  episodes: Episode[];
+}
+
+interface Episode {
+  id: number;
+  name: string;
+  still_path: string;
+}
